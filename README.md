@@ -2,7 +2,7 @@
 ---
 ### A Breakfast Restaurant
 ---
-###Deployment: link(byrdsr1.github.io/sizzle/)
+### Deployment: (byrdsr1.github.io/sizzle/)
 ---
 ### Site Map:
 
