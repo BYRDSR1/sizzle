@@ -53,17 +53,107 @@
 				</div>
 				<br/>
 				<div class="row">
-				  <a href="#server" class="link link-button btn btn-default btn-lg col-sm-2 col-sm-offset-1">Server</a>
-					<a href="#busser" class="link link-button btn btn-default btn-lg col-sm-2">Busser</a>
-					<a href="#dishwasher" class="link link-button btn btn-default btn-lg col-sm-2">Dishwasher</a>
-					<a href="#chef" class="link link-button btn btn-default btn-lg col-sm-2">Chef</a>
-					<a href="#manager" class="link link-button btn btn-default btn-lg col-sm-2">Manager</a>
+				  <a id="server" href="#" class="link link-button btn btn-default btn-lg col-sm-2 col-sm-offset-1">Server</a>
+					<a id="busser" href="#" class="link link-button btn btn-default btn-lg col-sm-2">Busser</a>
+					<a id="dishwasher" href="#" class="link link-button btn btn-default btn-lg col-sm-2">Dishwasher</a>
+					<a id="chef" href="#" class="link link-button btn btn-default btn-lg col-sm-2">Chef</a>
+					<a id="manager" href="#" class="link link-button btn btn-default btn-lg col-sm-2">Manager</a>
 				</div>
 				<br/>
-				<div id="career-list" class="info-div">
-				  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed tellus sed diam rutrum laoreet nec eu libero. Vestibulum vitae ante tincidunt, faucibus est in, fermentum metus.</p>
+				<script>
+				  const server = document.getElementById("server"),
+								busser = document.getElementById("busser"),
+								dishwasher = document.getElementById("dishwasher"),
+								chef = document.getElementById("chef"),
+								manager = document.getElementById("manager");
+					server.addEventListener("mouseover", () => {
+					  document.getElementById("s-p").style.display = "block";
+					});
+					server.addEventListener("mouseout", () => {
+					  document.getElementById("s-p").style.display = "none";
+					});
+					
+					busser.addEventListener("mouseover", () => {
+					  document.getElementById("b-p").style.display = "block";
+					});
+					busser.addEventListener("mouseout", () => {
+					  document.getElementById("b-p").style.display = "none";
+					});
+					
+					dishwasher.addEventListener("mouseover", () => {
+					  document.getElementById("d-p").style.display = "block";
+					});
+					dishwasher.addEventListener("mouseout", () => {
+					  document.getElementById("d-p").style.display = "none";
+					});
+					
+					chef.addEventListener("mouseover", () => {
+					  document.getElementById("c-p").style.display = "block";
+					});
+					chef.addEventListener("mouseout", () => {
+					  document.getElementById("c-p").style.display = "none";
+					});
+					
+					manager.addEventListener("mouseover", () => {
+					  document.getElementById("m-p").style.display = "block";
+					});
+					manager.addEventListener("mouseout", () => {
+					  document.getElementById("m-p").style.display = "none";
+					});
+				</script>
+				<div id="career-info" class="row">
+				<div style="display: none" id="s-p" class="col-sm-2 col-sm-offset-1">
+				<h3>Server</h3>
+						<p>Requirements:</p>
+						<ul>
+						  <li>Lorem ipsum</li>
+							<li>Lorem ipsum</li>
+							<li>Lorem ipsum</li>
+						</ul>
+				</div>
+				<div style="display: none" id="b-p" class="col-sm-2 col-sm-offset-3">
+				<h3>Busser</h3>
+						<p>Requirements:</p>
+						<ul>
+						  <li>Lorem ipsum</li>
+							<li>Lorem ipsum</li>
+							<li>Lorem ipsum</li>
+						</ul>
+				</div>
+				<div style="display: none" id="d-p" class="col-sm-2 col-sm-offset-5">
+				<h3>Dishwasher</h3>
+						<p>Requirements:</p>
+						<ul>
+						  <li>Lorem ipsum</li>
+							<li>Lorem ipsum</li>
+							<li>Lorem ipsum</li>
+						</ul>
+				</div>
+				<div style="display: none" id="c-p" class="col-sm-2 col-sm-offset-7">
+				<h3>Chef</h3>
+						<p>Requirements:</p>
+						<ul>
+						  <li>Lorem ipsum</li>
+							<li>Lorem ipsum</li>
+							<li>Lorem ipsum</li>
+						</ul>
+				</div>
+				<div style="display: none" id="m-p" class="col-sm-2 col-sm-offset-9">
+				<h3>Manager</h3>
+						<p>Requirements:</p>
+						<ul>
+						  <li>Lorem ipsum</li>
+							<li>Lorem ipsum</li>
+							<li>Lorem ipsum</li>
+						</ul>
+				</div>
+				</div>
+				<!--<div id="career-list" style="font-size: 16px;">
+				  <p class="info-div">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed tellus sed diam rutrum laoreet nec eu libero. Vestibulum vitae ante tincidunt, faucibus est in, fermentum metus.</p>
 					<br/>
-				  <div id="server">
+					<div class="row">
+					<div class="col-sm-4"></div>
+				  <div id="server" class="col-sm-3">
 					  <h3>Server</h3>
 						<p>Requirements:</p>
 						<ul>
@@ -72,7 +162,8 @@
 							<li>Lorem ipsum</li>
 						</ul>
 					</div>
-					<div id="busser">
+					<br/>
+					<div id="busser" class="col-sm-3">
 					  <h3>Busser</h3>
 						<p>Requirements:</p>
 						<ul>
@@ -81,7 +172,10 @@
 							<li>Lorem ipsum</li>
 						</ul>
 					</div>
-					<div id="dishwasher">
+					</div>
+					<div class="row">
+					<div class="col-sm-4"></div>
+					<div id="dishwasher" class="col-sm-3">
 					  <h3>Dishwasher</h3>
 						<p>Requirements:</p>
 						<ul>
@@ -90,7 +184,8 @@
 							<li>Lorem ipsum</li>
 						</ul>
 					</div>
-					<div id="chef">
+					<br/>
+					<div id="chef" class="col-sm-3">
 					  <h3>Chef</h3>
 						<p>Requirements:</p>
 						<ul>
@@ -99,7 +194,10 @@
 							<li>Lorem ipsum</li>
 						</ul>
 					</div>
-					<div id="manager">
+					</div>
+					<div class="row">
+					<div class="col-sm-5"></div>
+					<div id="manager" class="col-sm-4">
 					  <h3>Manager</h3>
 						<p>Requirements:</p>
 						<ul>
@@ -108,10 +206,11 @@
 							<li>Lorem ipsum</li>
 						</ul>
 					</div>
+					</div>
 				</div>
 			</section>
 		</main>
-	  	<br/>
+	  	<br/><br/>
 	 	<aside>
 			<p style="text-align: center"><em>1(800) 555-1234</em></p>
 			<address style="text-align: center">8452 Ledner Mount, Keithside, BL</address>
@@ -138,7 +237,7 @@
 				<div class="col-sm-3">
 					<p style="margin-top: 50px">For Educational Purposes Only</p>
 				</div>
-			</div>
+			</div>-->
 		</footer>
 	</div>
 </body>

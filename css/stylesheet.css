@@ -63,7 +63,9 @@ body {
 /*Careers Main*/
 #career-list > div > h3 {
 	text-align: center;
+	font-size: 16px;
 }
+
 /*Footer*/
 #footer {
 	background-color: #E0E0E0;
