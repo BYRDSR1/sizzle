@@ -14,4 +14,4 @@
 	- Sitemap
 	- Survey
 ---
-*For Web 1*
+*Project for Web 1 | For Educational Purposes Only*
