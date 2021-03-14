@@ -18,6 +18,18 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<!--JQuery Stuff-->
+	<script>
+		$(document).ready(function(){
+		  $("#order").click(
+			  function() {
+				  $("#order-tab").show();
+					$("#menu-content").addClass("col-sm-8");
+					$("#order-tab").addClass("col-sm-4");
+				}
+			);
+		});
+	</script>
 </head>
 <body>
   <div id="wrapper">
@@ -41,14 +53,46 @@
 				</div>
 			</nav>
 		</header>
-		<main style="margin-bottom: 15vh;">
-	        </main>
-	  	<br/>
-	  	<aside>
+		<main style="margin-bottom: 15vh;" class="row">
+		  <section id="menu-content" class="page-section">
+				<div class="title-words">
+			    <h1>Menu</h1>
+				  <br/>
+			  </div>
+				<div id="order" class="row">
+				  <a id="order" href="javascript:void(0)" class="link link-button btn btn-default btn-lg col-sm-8 col-sm-offset-2">Order</a>
+				</div>
+				<br/>
+				<div class="info-div">
+				  <div id="food-pics" class="row">
+					  <div id="waffles">
+						  <p>waffle</p>
+						</div>
+						<div id="pancakes">
+						  <p>pancakes</p>
+						</div>
+						<div id="breakfast-burritos">
+						  <p>burritos</p>
+						</div>
+						<div id="sides">
+						  <p>sides</p>
+						</div>
+						<div id="drinks">
+						  <p>drinks</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="order-tab" style="display: none; margin-bottom: 1000px" class="page-section">
+			  <p>hi</p>
+			</section>
+	  </main>
+	  <br/>
+	  <aside>
 			<p style="text-align: center"><em>1(800) 555-1234</em></p>
 			<address style="text-align: center">8452 Ledner Mount, Keithside, BL</address>
-	        </aside>
-	  	<br/>
+	  </aside>
+	  <br/>
 		<footer id="footer" class="container-fluid">
 			<br/>
 			<div class="row">
