@@ -31,12 +31,16 @@
 					  text == "Order" ? "Remove Order" : "Order"
 					);
 				}
-				/*, function() {
-				  $("#order-tab").hide();
-					$("#menu-content").removeClass("col-sm-8");
-					$("#order-tab").removeClass("col-sm-4");
-					$("#order-button").text("Order");
-				}*/
+			);
+			$("#waffle-pic").click(
+			  function() {
+			    $("#waffles-menu").toggle();
+			  }
+			);
+			$("#pancakes-pic").click(
+			  function() {
+				  $("#test2").toggle();
+				}
 			);
 		});
 	</script>
@@ -76,24 +80,31 @@
 				<!--Start Menu Stuff-->
 				<div class="info-div">
 				  <div id="food-pics" class="row">
-					  <div id="waffles">
-						  <img class="img-responsive col-sm-2 col-sm-offset-1 thumbnail" src="images/waffles.jpg" alt="waffles"/>
+					  <div id="waffles" class="col-sm-2 col-sm-offset-1">
+						  <img id="waffle-pic" class="img-responsive thumbnail" src="images/waffles.jpg" alt="waffles"/>
 							<!--https://www.pexels.com/photo/berries-breakfast-delicious-food-374092/-->
+							<div id="waffles-menu" style="display: none;">
+							  <div class="row panel panel-heading">
+							    <p class="col-sm-4">Regular Waffles</p>
+								  <p class="col-sm-2 col-sm-offset-2">1</p>
+							  </div>
+							</div>
 						</div>
-						<div id="pancakes">
-						  <img class="img-responsive col-sm-2 thumbnail" src="images/pancakes.jpg" alt="pancakes"/>
+						<div id="pancakes" class="col-sm-2">
+						  <img id="pancakes-pic" class="img-responsive thumbnail" src="images/pancakes.jpg" alt="pancakes"/>
 							<!--https://www.pexels.com/photo/stack-of-pancakes-with-strawberry-fruits-2280545/-->
+							<p id="test2" style="display: none;">Pancakes</p>
 						</div>
-						<div id="french-toast">
-						  <img class="img-responsive col-sm-2 thumbnail" src="images/french-toast.jpg" alt="french toast"/>
+						<div id="french-toast" class="col-sm-2">
+						  <img class="img-responsive thumbnail" src="images/french-toast.jpg" alt="french toast"/>
 							<!--https://unsplash.com/photos/1FQx2-YtV1A-->
 						</div>
-						<div id="sides">
-						  <img class="img-responsive col-sm-2 thumbnail" src="images/fruit.jpg" alt="sides"/>
+						<div id="sides" class="col-sm-2">
+						  <img class="img-responsive thumbnail" src="images/fruit.jpg" alt="sides"/>
 							<!--https://www.pexels.com/photo/blueberries-and-strawberries-in-white-ceramic-bowl-1120575/-->
 						</div>
-						<div id="drinks">
-						  <img class="img-responsive col-sm-2 thumbnail" src="images/coffee.jpg" alt="drinks"/>
+						<div id="drinks" class="col-sm-2">
+						  <img class="img-responsive thumbnail" src="images/coffee.jpg" alt="drinks"/>
 							<!--https://www.pexels.com/photo/red-ceramic-mug-on-red-saucer-1187317/-->
 						</div>
 					</div>
