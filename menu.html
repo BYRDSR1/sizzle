@@ -30,6 +30,7 @@
 					$("#order-button").text(
 					  text == "Order" ? "Remove Order" : "Order"
 					);
+					$("#order-table").empty();
 				}
 			);
 			$("#waffle-pic").click(
@@ -42,6 +43,18 @@
 				  $("#test2").toggle();
 				}
 			);
+			$("#reg-waffles").click(function(){
+			  var item = "<td>Regular Waffles</td>";
+				var value = "<td>$5.99</td>";
+				$("#order-table").append("<tr>" + item + value + "</tr");
+				var total = 0;
+				$("order-table").forEach((element) => {
+				  if(typeof element == "number") {
+					  total += element;
+					}
+				});
+				$("#total").text(total);
+			});
 		});
 	</script>
 </head>
@@ -84,10 +97,12 @@
 						  <img id="waffle-pic" class="img-responsive thumbnail" src="images/waffles.jpg" alt="waffles"/>
 							<!--https://www.pexels.com/photo/berries-breakfast-delicious-food-374092/-->
 							<div id="waffles-menu" style="display: none;">
-							  <div class="row panel panel-heading">
-							    <p class="col-sm-4">Regular Waffles</p>
-								  <p class="col-sm-2 col-sm-offset-2">1</p>
-							  </div>
+							  <table class="table">
+								  <tr id="reg-waffles">
+									  <td>Regular Waffles</td>
+										<td>$5.99</p>
+									</tr>
+								</table>
 							</div>
 						</div>
 						<div id="pancakes" class="col-sm-2">
@@ -120,12 +135,16 @@
 						  <th class="col-sm-3">Price</th>
 					  </tr>
 					</thead>
+					<tbody id="order-table">
+					</tbody>
 					<tfoot>
 					  <tr>
 						  <th class="col-sm-3 col-sm-offset-1">Total:</th>
+							<th id="total">$0.00</th>
 						</tr>
 					</tfoot>
 				</table>
+	      <a href="javascript:void(0)" class="link link-button btn btn-default btn-lg col-sm-4 col-sm-offset-4">Order</a>
 			</section>
 	  </main>
 	  <br/>
