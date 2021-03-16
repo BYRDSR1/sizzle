@@ -21,6 +21,7 @@
 	<!--JQuery Stuff-->
 	<script>
 		$(document).ready(function(){
+			//Order Button
 		  $("#order").click(
 			  function() {
 				  $("#order-tab").toggle();
@@ -33,28 +34,149 @@
 					$("#order-table").empty();
 				}
 			);
+			//Waffle Picture 
 			$("#waffle-pic").click(
 			  function() {
 			    $("#waffles-menu").toggle();
 			  }
 			);
+			//Pancakes Picture
 			$("#pancakes-pic").click(
 			  function() {
-				  $("#test2").toggle();
+				  $("#pancakes-menu").toggle();
 				}
 			);
+			//French Toast Picture
+			$("#french-toast-pic").click(
+			  function() {
+				  $("#french-toast-menu").toggle();
+				}
+			);
+			//Sides Picture
+			$("#sides-pic").click(
+			  function() {
+				  $("#sides-menu").toggle();
+				}
+			);
+			//Drinks Picture
+			$("#drinks-pic").click(
+			  function() {
+				  $("#drinks-menu").toggle();
+				}
+			);
+			//Start Waffles
+			//Regular Waffles 
 			$("#reg-waffles").click(function(){
-			  var item = "<td>Regular Waffles</td>";
-				var value = "<td>$5.99</td>";
+			  let item = "<td>Regular Waffles</td>";
+				let value = "<td>$5.99</td>";
 				$("#order-table").append("<tr>" + item + value + "</tr");
-				var total = 0;
+				/*let total = 0;
 				$("order-table").forEach((element) => {
 				  if(typeof element == "number") {
 					  total += element;
 					}
 				});
-				$("#total").text(total);
+				$("#total").text(total);*/
 			});
+			//Blueberry Waffles 
+			$("#blue-waffles").click(function(){
+			  let item = "<td>Blueberry Waffles</td>";
+				let value = "<td>$6.99</td>";
+				$("#order-table").append("<tr>" + item + value + "</tr");
+			});
+			//Chocolate Waffles
+			$("#choc-waffles").click(function(){
+			  let item = "<td>Chocolate Waffles</td>";
+				let value = "<td>$6.99</td>";
+				$("#order-table").append("<tr>" + item + value + "</tr");
+			});
+			//End Waffles
+			//Start Pancakes
+			//Regular Pancakes
+			$("#reg-pancakes").click(function(){
+			  let item = "<td>Regular Pancakes</td>";
+				let value = "<td>$4.99</td>";
+				$("#order-table").append("<tr>" + item + value + "</tr");
+			});
+			//Blueberry Pancakes
+			$("#blue-pancakes").click(function(){
+			  let item = "<td>Blueberry Pancakes</td>";
+				let value = "<td>$5.99</td>";
+				$("#order-table").append("<tr>" + item + value + "</tr");
+			});
+			//Chocolate Pancakes
+			$("#choc-pancakes").click(function(){
+			  let item = "<td>Chocolate Pancakes</td>";
+				let value = "<td>$5.99</td>";
+				$("#order-table").append("<tr>" + item + value + "</tr");
+			});
+			//End Pancakes
+			//Start French Toast
+			//Original French Toast
+			$("#original-french-toast").click(function(){
+			  let item = "<td>Original French Toast</td>";
+				let value = "<td>$6.99</td>";
+				$("#order-table").append("<tr>" + item + value + "</tr");
+			});
+			//Fruit-Topped French Toast
+			$("#fruit-french-toast").click(function(){
+			  let item = "<td>Fruit-Topped French Toast</td>";
+				let value = "<td>$6.99</td>";
+				$("#order-table").append("<tr>" + item + value + "</tr");
+			});
+			//End French Toast
+			//Start Sides
+			//Bacon
+			$("#bacon").click(function(){
+			  let item = "<td>Hickory-Smoked Bacon</td>";
+				let value = "<td>$1.99</td>";
+				$("#order-table").append("<tr>" + item + value + "</tr");
+			});
+			//Eggs
+			$("#eggs").click(function(){
+			  let item = "<td>Eggs</td>";
+				let value = "<td>$1.99</td>";
+				$("#order-table").append("<tr>" + item + value + "</tr");
+			});
+			//Hash Browns
+			$("#hash-browns").click(function(){
+			  let item = "<td>Hash Browns</td>";
+				let value = "<td>$1.99</td>";
+				$("#order-table").append("<tr>" + item + value + "</tr");
+			});
+			//Fruit Bowl
+			$("#fruit").click(function(){
+			  let item = "<td>Fruit Bowl</td>";
+				let value = "<td>$1.99</td>";
+				$("#order-table").append("<tr>" + item + value + "</tr");
+			});
+			//End Sides
+			//Start Drinks
+			//Coffee
+			$("#coffee").click(function(){
+			  let item = "<td>Coffee</td>";
+				let value = "<td>$1.99</td>";
+				$("#order-table").append("<tr>" + item + value + "</tr");
+			});
+			//Orange Juice
+			$("#orange-juice").click(function(){
+			  let item = "<td>Orange Juice</td>";
+				let value = "<td>$1.99</td>";
+				$("#order-table").append("<tr>" + item + value + "</tr");
+			});
+			//Water
+			$("#water").click(function(){
+			  let item = "<td>Water</td>";
+				let value = "<td>$1.99</td>";
+				$("#order-table").append("<tr>" + item + value + "</tr");
+			});
+			//Soft Drink
+			$("#soft-drink").click(function(){
+			  let item = "<td>Soft Drink</td>";
+				let value = "<td>$1.99</td>";
+				$("#order-table").append("<tr>" + item + value + "</tr");
+			});
+			//End Drinks
 		});
 	</script>
 </head>
@@ -96,11 +218,20 @@
 					  <div id="waffles" class="col-sm-2 col-sm-offset-1">
 						  <img id="waffle-pic" class="img-responsive thumbnail" src="images/waffles.jpg" alt="waffles"/>
 							<!--https://www.pexels.com/photo/berries-breakfast-delicious-food-374092/-->
+							<!--Waffle Dropdown-->
 							<div id="waffles-menu" style="display: none;">
-							  <table class="table">
+							  <table class="table table-hover table-condensed">
 								  <tr id="reg-waffles">
 									  <td>Regular Waffles</td>
-										<td>$5.99</p>
+										<td>$5.99</td>
+									</tr>
+									<tr id="blue-waffles">
+									  <td>Blueberry Waffles</td>
+										<td>$6.99</td>
+									</tr>
+									<tr id="choc-waffles">
+									  <td>Chocolate Waffles</td>
+										<td>$6.99</td>
 									</tr>
 								</table>
 							</div>
@@ -108,26 +239,94 @@
 						<div id="pancakes" class="col-sm-2">
 						  <img id="pancakes-pic" class="img-responsive thumbnail" src="images/pancakes.jpg" alt="pancakes"/>
 							<!--https://www.pexels.com/photo/stack-of-pancakes-with-strawberry-fruits-2280545/-->
-							<p id="test2" style="display: none;">Pancakes</p>
+							<!--Pancakes Dropdown-->
+							<div id="pancakes-menu" style="display: none;">
+							  <table class="table table-hover table-condensed">
+								  <tr id="reg-pancakes">
+									  <td>Regular Pancakes</td>
+										<td>$4.99</td>
+									</tr>
+									<tr id="blue-pancakes">
+									  <td>Blueberry Pancakes</td>
+										<td>$5.99</td>
+									</tr>
+									<tr id="choc-pancakes">
+									  <td>Chocolate Pancakes</td>
+										<td>$5.99</td>
+									</tr>
+								</table>
+							</div>
 						</div>
 						<div id="french-toast" class="col-sm-2">
-						  <img class="img-responsive thumbnail" src="images/french-toast.jpg" alt="french toast"/>
+						  <img id="french-toast-pic"class="img-responsive thumbnail" src="images/french-toast.jpg" alt="french toast"/>
 							<!--https://unsplash.com/photos/1FQx2-YtV1A-->
+							<div id="french-toast-menu" style="display: none;">
+							  <table class="table table-hover table-condensed">
+								  <tr id="original-french-toast">
+									  <td>Original French Toast</td>
+										<td>$6.99</td>
+									</tr>
+									<tr id="fruit-french-toast">
+									  <td>Fruit-Topped French Toast</td>
+										<td>$7.99</td>
+									</tr>
+								</table>
+							</div>
 						</div>
 						<div id="sides" class="col-sm-2">
-						  <img class="img-responsive thumbnail" src="images/fruit.jpg" alt="sides"/>
+						  <img id="sides-pic" class="img-responsive thumbnail" src="images/fruit.jpg" alt="sides"/>
 							<!--https://www.pexels.com/photo/blueberries-and-strawberries-in-white-ceramic-bowl-1120575/-->
+							<div id="sides-menu" style="display: none;">
+							  <table class="table table-hover table-condensed">
+								  <tr id="bacon">
+									  <td>Hickory-Smoked Bacon</td>
+										<td>$1.99</td>
+									</tr>
+									<tr id="eggs">
+									  <td>Eggs</td>
+										<td>$1.99</td>
+									</tr>
+									<tr id="hash-browns">
+									  <td>Hash Browns</td>
+										<td>$1.99</td>
+									</tr>
+									<tr id="fruit">
+									  <td>Fruit Bowl</td>
+										<td>$1.99</td>
+									</tr>
+								</table>
+							</div>
 						</div>
 						<div id="drinks" class="col-sm-2">
-						  <img class="img-responsive thumbnail" src="images/coffee.jpg" alt="drinks"/>
+						  <img id="drinks-pic" class="img-responsive thumbnail" src="images/coffee.jpg" alt="drinks"/>
 							<!--https://www.pexels.com/photo/red-ceramic-mug-on-red-saucer-1187317/-->
+							<div id="drinks-menu" style="display: none;">
+							  <table class="table table-hover table-condensed">
+								  <tr id="coffee">
+									  <td>Coffee</td>
+										<td>$1.99</td>
+									</tr>
+									<tr id="orange-juice">
+									  <td>Orange Juice</td>
+										<td>$1.99</td>
+									</tr>
+									<tr id="water">
+									  <td>Water</td>
+										<td>$1.99</td>
+									</tr>
+									<tr id="soft-drink">
+									  <td>Soft Drink</td>
+										<td>$1.99</td>
+									</tr>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
 				<!--End Menu Stuff-->
 			</section>
 			<!--Remember to remove the margin-bottom property-->
-			<section id="order-tab" class="page-section" style="display: none; margin-bottom: 1000px;" class="page-section">
+			<section id="order-tab" class="page-section" style="display: none;" class="page-section">
 			  <table class="table table-condensed table-hover active" style="margin-top: 25px;">
 				  <thead class="row">
 					  <tr>
