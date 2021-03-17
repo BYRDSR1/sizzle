@@ -18,9 +18,34 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<!--Add Total-->
+	  <script>
+	  const addTotal = () => {
+		  const orderTable = document.getElementById("order-table");
+			let rawTotal = [],
+					parsedTotal = [],
+			    total = 0;
+			for(let i = 0; i < orderTable.children.length; i++) {
+			  let item = orderTable.children[i].lastChild.innerHTML;
+				rawTotal.push(item.replace("$", ""));
+			}
+			console.log(rawTotal);
+			rawTotal.forEach((element) => {
+			  let parsed = parseFloat(element);
+				parsedTotal.push(parsed);
+			})
+			console.log(parsedTotal);
+			parsedTotal.forEach((num) => {
+			  total += num;
+			})
+			
+			return total.toFixed(2);
+		}
+	</script>
 	<!--JQuery Stuff-->
 	<script>
 		$(document).ready(function(){
+		  
 		  $("#place-order").click(function() {
 			  let order = $("#order-table").children(),
 				    modal = $("#modal-content");
@@ -42,6 +67,7 @@
 					  text == "Order" ? "Remove Order" : "Order"
 					);
 					$("#order-table").empty();
+					$("#total").text("$0.00");
 				}
 			);
 			//Waffle Picture 
@@ -187,27 +213,15 @@
 				$("#order-table").append("<tr>" + item + value + "</tr");
 			});
 			//End Drinks
+			$(".menu").children().click(function() {
+			  let price = addTotal();
+			  $("#total").text("$" + price);
+			})
 		});
-	</script>
-  <!--Check Order-->
-	<script>
-	  //Check Order
-			function checkOrder() {
-			  let order = document.getElementById("order-table").children,
-				    modal = document.getElementById("modal-content");
-						/*successTitle = document.createElement("h3").innerHTML = "Your Order Has Been Placed!",
-						br = document.createElement("br"),
-						successWords = document.createElement("p").innerHTML = */
-				if(order) {
-				  modal.innerHTML = '<h3>Your Order Has Been Placed!</h3><br/><p>Please Consider Filling Out Our <a href="survey.html" class="link" target="_blank">Survey Form</a></p>';
-				} else {
-				  model.innerHTML = '<h3>Please Select Something Before Ordering</h3>';
-				}
-			}
 	</script>
 </head>
 <body>
-  <div id="wrapper">
+  <div id="wrapper" class="container-fluid">
 		<header id="header" class="">
 			<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
 				<div class="container-fluid">
@@ -221,7 +235,6 @@
 						<li><a href="menu.html">Menu</a></li>
 					</ul>
 				  <ul class="nav navbar-nav navbar-right">
-						<li><a href="es/menu.html">Espa&#241;ol</a></li>
 						<li><a href="signup.html">Sign-Up</a></li>
 					</ul>
 				</div>
@@ -245,7 +258,7 @@
 							<!--https://www.pexels.com/photo/berries-breakfast-delicious-food-374092/-->
 							<!--Waffle Dropdown-->
 							<div id="waffles-menu" style="display: none;">
-							  <table class="table table-hover table-condensed">
+							  <table class="menu table table-hover table-condensed">
 								  <tr id="reg-waffles">
 									  <td>Regular Waffles</td>
 										<td>$5.99</td>
@@ -266,7 +279,7 @@
 							<!--https://www.pexels.com/photo/stack-of-pancakes-with-strawberry-fruits-2280545/-->
 							<!--Pancakes Dropdown-->
 							<div id="pancakes-menu" style="display: none;">
-							  <table class="table table-hover table-condensed">
+							  <table class="menu table table-hover table-condensed">
 								  <tr id="reg-pancakes">
 									  <td>Regular Pancakes</td>
 										<td>$4.99</td>
@@ -286,7 +299,7 @@
 						  <img id="french-toast-pic"class="img-responsive thumbnail" src="images/french-toast.jpg" alt="french toast"/>
 							<!--https://unsplash.com/photos/1FQx2-YtV1A-->
 							<div id="french-toast-menu" style="display: none;">
-							  <table class="table table-hover table-condensed">
+							  <table class="menu table table-hover table-condensed">
 								  <tr id="original-french-toast">
 									  <td>Original French Toast</td>
 										<td>$6.99</td>
@@ -302,7 +315,7 @@
 						  <img id="sides-pic" class="img-responsive thumbnail" src="images/fruit.jpg" alt="sides"/>
 							<!--https://www.pexels.com/photo/blueberries-and-strawberries-in-white-ceramic-bowl-1120575/-->
 							<div id="sides-menu" style="display: none;">
-							  <table class="table table-hover table-condensed">
+							  <table class="menu table table-hover table-condensed">
 								  <tr id="bacon">
 									  <td>Hickory-Smoked Bacon</td>
 										<td>$1.99</td>
@@ -326,7 +339,7 @@
 						  <img id="drinks-pic" class="img-responsive thumbnail" src="images/coffee.jpg" alt="drinks"/>
 							<!--https://www.pexels.com/photo/red-ceramic-mug-on-red-saucer-1187317/-->
 							<div id="drinks-menu" style="display: none;">
-							  <table class="table table-hover table-condensed">
+							  <table class="menu table table-hover table-condensed">
 								  <tr id="coffee">
 									  <td>Coffee</td>
 										<td>$1.99</td>
@@ -391,12 +404,12 @@
 			</section>
 	  </main>
 	  <br/>
-	  <aside>
+	  <aside class="">
 			<p style="text-align: center"><em>1(800) 555-1234</em></p>
 			<address style="text-align: center">8452 Ledner Mount, Keithside, BL</address>
 	  </aside>
 	  <br/>
-		<footer id="footer" class="container-fluid">
+		<footer id="footer" class="container-fluid navbar-fixed-bottom">
 			<br/>
 			<div class="row">
 				<div class="col-sm-3">
@@ -408,8 +421,6 @@
 					<p style="margin-top: 50px">
 						<a href="about.html" class="link"> About</a> | 
 						<a href="menu.html" class="link"> Menu</a> | 
-						<a href="catering.html" class="link"> Catering</a> | 
-						<a href="login.html" class="link"> Login</a> | 
 						<a href="signup.html" class="link"> Sign-Up</a> |
 						<a href="sitemap.html" class="link"> Sitemap</a>
 					</p>
