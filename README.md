@@ -8,7 +8,6 @@
 - Home
 	- About
 	- Menu
-	- Catering
 	- Login
 	- Sign-Up
 	- Sitemap
