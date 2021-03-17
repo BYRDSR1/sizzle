@@ -11,12 +11,5 @@
 - Sign-Up
 - Sitemap
 - Survey
-- es/
-	- Home
-	- About
-	- Menu
-	- Sign-Up
-	- Sitemap
-	- Survey
 ---
 *Project for Web 1 | For Educational Purposes Only | Last Updated: 3/16/21*
