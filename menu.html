@@ -21,6 +21,16 @@
 	<!--JQuery Stuff-->
 	<script>
 		$(document).ready(function(){
+		  $("#place-order").click(function() {
+			  let order = $("#order-table").children(),
+				    modal = $("#modal-content");
+				modal.empty();
+				if(order.length !== 0) {
+				  modal.append('<h3>Your Order Has Been Placed!</h3><br/><p>Please Consider Filling Out Our <a href="survey.html" class="link" target="_blank">Survey Form</a></p>');
+				} else {
+				  modal.append('<h3>Please Select Something Before Ordering</h3>');
+				}
+			});
 			//Order Button
 		  $("#order").click(
 			  function() {
@@ -179,6 +189,22 @@
 			//End Drinks
 		});
 	</script>
+  <!--Check Order-->
+	<script>
+	  //Check Order
+			function checkOrder() {
+			  let order = document.getElementById("order-table").children,
+				    modal = document.getElementById("modal-content");
+						/*successTitle = document.createElement("h3").innerHTML = "Your Order Has Been Placed!",
+						br = document.createElement("br"),
+						successWords = document.createElement("p").innerHTML = */
+				if(order) {
+				  modal.innerHTML = '<h3>Your Order Has Been Placed!</h3><br/><p>Please Consider Filling Out Our <a href="survey.html" class="link" target="_blank">Survey Form</a></p>';
+				} else {
+				  model.innerHTML = '<h3>Please Select Something Before Ordering</h3>';
+				}
+			}
+	</script>
 </head>
 <body>
   <div id="wrapper">
@@ -325,7 +351,6 @@
 				</div>
 				<!--End Menu Stuff-->
 			</section>
-			<!--Remember to remove the margin-bottom property-->
 			<section id="order-tab" class="page-section" style="display: none;" class="page-section">
 			  <table class="table table-condensed table-hover active" style="margin-top: 25px;">
 				  <thead class="row">
@@ -343,7 +368,27 @@
 						</tr>
 					</tfoot>
 				</table>
-	      <a href="javascript:void(0)" class="link link-button btn btn-default btn-lg col-sm-4 col-sm-offset-4">Order</a>
+	      <a id="place-order" href="javascript:void(0)" class="link link-button btn btn-default btn-lg col-sm-4 col-sm-offset-4" data-toggle="modal" data-target="#exampleModal">Order</a>
+				
+				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel"></h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+							  <div id="modal-content" class="title-words">
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="link-button btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+
 			</section>
 	  </main>
 	  <br/>
