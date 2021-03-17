@@ -6,9 +6,15 @@
 ---
 ### Site Map:
 - Home
+- About
+- Menu
+- Sign-Up
+- Sitemap
+- Survey
+- es/
+	- Home
 	- About
 	- Menu
-	- Login
 	- Sign-Up
 	- Sitemap
 	- Survey
