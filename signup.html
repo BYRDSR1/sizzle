@@ -18,6 +18,22 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<!--Parallax-->
+	<style>
+    .parallax {
+    /* The image used */
+    background-image: url("images/homepage-main-picture.jpeg");
+
+    /* Set a specific height */
+    min-height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  </style>
 </head>
 <body>
   <div id="wrapper">
@@ -40,35 +56,69 @@
 			</nav>
 		</header>
 		<main style="margin-bottom: 15vh;">
-		  <section class="page-section">
+		  <section class="page-section parallax row">
+			<div class="col-sm-3"></div>
+			<div style="background-color: #FFFFFF;" class="col-sm-6">
 		    <br/>
 			  <div class="title-words">
 			    <h1>Recieve Our Weekly Email!</h1>
 				  <br/>
 			  </div>
 			  <br/><br/>
-			  <form method="post" class="info-div">
+			  <form method="get" class="info-div" style="text-indent: 0;">
 			    <div class="row">
-				  <div class="col-sm-3 col-sm-offset-3">
-				     <strong>Name: </strong><input name="name" type="text" maxlength="20" placeholder="Firstname Lastname" required />
+				    <div class="col-sm-3">
+				     <strong>Name: </strong>
+						 <input style="margin-left: 4vw;" name="name" type="text" maxlength="20" placeholder="Firstname Lastname" required />
+				    </div>
 				  </div>
-				</div>
-				<br/>
-				 <div class="row">
-				  <div class="col-sm-3 col-sm-offset-3">
-				     <strong>Email: </strong><input name="email" type="email" maxlength="20" placeholder="example@example.com" required />
+				  <br/>
+				  <div class="row">
+				    <div class="col-sm-3">
+				     <strong>Email: </strong>
+						 <input style="margin-left: 4vw;" name="email" type="email" maxlength="20" placeholder="example@example.com" required />
+				    </div>
 				  </div>
-				</div>
-				<br/>
-				 <div class="row">
-				  <div class="col-sm-3 col-sm-offset-3">
-				     <p><strong>What Content Would You Like To Hear About?</strong></p>
-					 <input type="radio" name="pref" value="promotions" checked /> Promotions
-					 <input type="radio" name="pref" value="events" checked /> Events
-					 <input type="radio" name="pref" value="promotions" checked /> Promotions
+				  <br/>
+					<div class="row">
+				    <div class="col-sm-3">
+				     <strong>Phone: </strong>
+						 <input id="phone" style="margin-left: 4vw;" type="tel" id="phone" name="phone" placeholder="555-555-555" pattern="([0-9]{3}-[0-9]{2}-[0-9]{3})|(\d{8})|[(]\d{3}[)]\s?\d{3}-\d{3}" ><br>
+				    </div>
 				  </div>
+				  <br/>
+				   <div class="row">
+				    <div>
+				      <p style="text-indent: 0; margin-left: 2vw;"><strong>What Content Would You Like To Hear About?</strong></p>
+							<div style="margin-left: 4vw;" >
+					      <input type="checkbox" name="pref" value="promotions" checked /> Promotions<br/>
+					      <input type="checkbox" name="pref" value="events" checked /> Events<br/>
+					      <input type="checkbox" name="pref" value="promotions" checked /> Promotions<br/>
+							</div>
+				    </div>
+				  </div>
+					<br/>
+				  <div class="row">
+				    <div class="col-sm-offset-2">
+				      <input id="texts" type="checkbox" name="phone-pref" value="true" checked /><strong> Want Us To Send You Texts?</strong>
+				    </div>
+				  </div>
+				  <br/>
+				   <div class="row">
+				    <div class="col-sm-4 col-sm-offset-3">
+						  <div class="row">
+							  <div class="col-sm-1 col-sm-offset-2">
+				          <input type="submit" class="btn btn-success" value="Submit"/>
+								</div>
+								<div class="col-sm-1 col-sm-offset-5">
+						      <input type="reset" class="btn btn-danger" value="Reset" />
+								</div>
+							</div>
+				    </div>
+				  </div>
+			  </form>
 				</div>
-			  </div>
+				<div class="col-sm-3"></div>
 		  </section>
 	    </main>
 	  	<br/>
@@ -77,7 +127,7 @@
 			<address style="text-align: center">8452 Ledner Mount, Keithside, BL</address>
 	        </aside>
 	  	<br/>
-		<footer id="footer" class="container-fluid navbar-fixed-bottom">
+		<footer id="footer" class="container-fluid">
 			<br/>
 			<div class="row">
 				<div class="col-sm-3">
