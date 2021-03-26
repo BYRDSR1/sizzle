@@ -18,6 +18,36 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<!--JavaScript Stuff-->
+	<script>
+	  function checkInput(event) {
+		  let charCode = event.keyCode,
+					age = document.getElementById("age");
+			if(age.value[1] == "2" && age.value.length == 2) {
+			  if(charCode !== 48) {
+				  age.value = "120";
+				  return false;
+				}
+			}
+			if(age.value.length == 2 && !(age.value[1] <= "2")) {
+			  age.value = "120";
+				return false;
+			}
+			if(age.value.length == 2 && age.value[0] !== "1") {
+			  age.value = "120";
+				return false;
+			}
+			if(age.value == "" && charCode === 48) {
+			  age.value = "";
+				return false;
+			}
+			if((charCode >= 48 && charCode <= 57)) {
+				return true;
+			} else {
+			  return false
+			}
+		}
+	</script>
 </head>
 <body>
   <div id="wrapper">
@@ -39,15 +69,84 @@
 				</div>
 			</nav>
 		</header>
-     		<main style="margin-bottom: 15vh;"/>
-	  	</main>
+    <main style="margin-bottom: 15vh;"/>
+		  <section class="page-section">
+			<br/>
+			  <div class="title-words">
+			    <h1>Thank You for Taking Time to Fill Out Our Survey!</h1>
+				  <br/>
+			  </div>
+				<br/><br/>
+				<form method="post" class="info-div row">
+          <div class="col-sm-offset-3">
+					  <div class="row">
+				      <div class="col-sm-3">
+				        <strong>Name: </strong>
+						    <input style="margin-left: 4vw;" name="name" type="text" maxlength="20" placeholder="Firstname Lastname" />
+				      </div>
+					  </div>
+					  <br/>
+					  <div class="row">
+						  <div class="col-sm-3">
+				        <strong>Age: </strong>
+						    <input id="age" style="margin-left: 4vw;" name="age" type="text" maxlength="3" max="120" min="0" onkeypress=" return checkInput(event)" />
+							</div>
+					  </div>
+					  <br/>
+						<div class="row">
+						  <div class="col-sm-3">
+				        <strong>When Did You Order Here?</strong>
+								<input style="margin-left: 4vw;" id="datefield" name="date" type='date' min='1899-01-01' max='2000-13-13' />
+							</div>
+					  </div>
+					  <br/>
+						<div class="row">
+						  <div class="col-sm-5">
+				        <strong>How Would You Rate Your Experience?</strong>
+								<select style="margin-left: 4vw;" name="quality" required>
+								  <option value="" selected disabled>--Please Select An Option--</option>
+									<option value="exellent">Exellent</option>
+									<option value="good">Good</option>
+									<option value="ok">Ok</option>
+									<option value="bad">Bad</option>
+									<option value="horrible">Horrible</option>
+								</select>
+							</div>
+					  </div>
+					  <br/>
+						<div class="row">
+						  <div class="col-sm-8">
+				        <strong>Comments/Concerns</strong><br/>
+								<textarea style="margin-left: 4vw;" cols="30" rows="4" name="comments" maxlength="150"></textarea>
+							</div>
+					  </div>
+					  <br/>
+				  </div>
+				  <br/>
+					<div class="row">
+				    <div class="col-sm-4 col-sm-offset-3">
+						  <div class="row">
+							  <div class="col-sm-1 col-sm-offset-5">
+				          <input type="submit" class="btn btn-success" value="Submit"/>
+								</div>
+								<div class="col-sm-1 col-sm-offset-3">
+						      <input type="reset" class="btn btn-danger" value="Reset" />
+								</div>
+							</div>
+				    </div>
+				  </div>
+					</div>
+				</form>
+				</div>
+      </section>			
+	  </main>
 		<br/>
 	  	<aside>
 			<p style="text-align: center"><em>1(800) 555-1234</em></p>
 			<address style="text-align: center">8452 Ledner Mount, Keithside, BL</address>
 	        </aside>
 	  	<br/>
-		<footer id="footer" class="container-fluid navbar-fixed-bottom">
+		<footer id="footer" class="container-fluid">
 			<br/>
 			<div class="row">
 				<div class="col-sm-3">
@@ -69,5 +168,20 @@
 			</div>
 		</footer>
 	</div>
+		<script>
+	  var today = new Date();
+    var dd = today.getDate();
+		var mm = today.getMonth()+1; //January is 0!
+		var yyyy = today.getFullYear();
+		if(dd<10){
+      dd='0'+dd
+    } 
+    if(mm<10){
+        mm='0'+mm
+    } 
+
+		today = yyyy+'-'+mm+'-'+dd;
+		document.getElementById("datefield").setAttribute("max", today);
+	</script>
 </body>
 </html>
